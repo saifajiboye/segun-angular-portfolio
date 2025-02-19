@@ -1,0 +1,19 @@
+<nav class="navbar">
+    <div class="logo"><img src="assets/logo.png" alt="Segun"></div>
+    <button *ngIf="isMobile" class="menu-btn" (click)="toggleMenu()">
+      <i class="fa fa-bars"></i>
+    </button>
+    <ul class="nav-links" [class.open]="menuOpen || !isMobile">
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/my-work">My Work</a></li>
+      <li><a routerLink="/Contact">Contact</a></li>
+      <li><a routerLink="/mini-games">Mini Games</a></li>
+    </ul>
+    <button class="theme-toggle" (click)="toggleTheme()">
+      <i *ngIf="themeService.isDarkMode(); else lightMode" class="fa-sharp fa-solid fa-sun"></i>
+      <ng-template #lightMode>
+        <i class="fa-sharp fa-solid fa-moon"></i>
+      </ng-template>
+      
+    </button>
+  </nav>
