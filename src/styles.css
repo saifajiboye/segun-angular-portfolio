@@ -7,8 +7,14 @@
         color: orange;
     }
 
-    p {
+    .card {
+        background: #333;
         color: white;
-    }
+      }
+    
+      .filters button {
+        background-color: #444;
+        color: gold;
+      }
 }
 
