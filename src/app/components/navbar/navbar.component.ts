@@ -1,10 +1,10 @@
 import { Component, HostListener, ViewEncapsulation } from '@angular/core';
 import { ThemeService } from '../../services/theme.service';
 import { NgIf } from '@angular/common';
-
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-navbar',
-  imports: [NgIf],
+  imports: [NgIf, RouterModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
   encapsulation: ViewEncapsulation.None

@@ -27,6 +27,7 @@
   
   .nav-links li {
     margin: 0 10px;
+    cursor: pointer;
   }
   
   .nav-links a {
@@ -53,6 +54,8 @@
     .menu-btn {
       display: block;
     }
+
+    
   
     .nav-links {
       display: none;
@@ -72,8 +75,11 @@
     .nav-links li {
       margin: 10px 0;
       text-align: center;
+      
     }
   }
+
+
   
   /* Theme Toggle */
   .theme-toggle {
