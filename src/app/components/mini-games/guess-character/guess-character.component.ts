@@ -79,7 +79,7 @@ export class GuessCharacterComponent implements OnInit {
     this.word = this.words[Math.floor(Math.random() * this.words.length)];
     this.scrambledWord = this.scrambleWord(this.word).toUpperCase();
 
-    while (this.scrambledWord === this.word) {
+    while (this.scrambledWord === this.word.toUpperCase()) {
       this.scrambledWord = this.scrambleWord(this.word).toUpperCase();
     }
   }
