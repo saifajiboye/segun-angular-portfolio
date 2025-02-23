@@ -2,8 +2,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 50px;
     min-height: 100vh;
+    padding-top: 50px;
+    padding-left: 50px;
   
     .hero-container {
       flex: 1;
@@ -78,12 +79,14 @@
       flex-direction: column;
       text-align: center;
       margin-bottom: -25px;
+      padding-left: 0%;
   
       .hero-content {
         max-width: 100%;
        p {
         width: 100%;
-        font-size: small;
+        max-width: 100%;
+        font-size: small; 
          
        }
        
