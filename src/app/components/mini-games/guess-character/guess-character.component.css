@@ -34,6 +34,10 @@ button {
   transition: 0.3s;
 }
 
+.word {
+    color :red
+}
+
 button:hover {
   opacity: 0.8;
 }

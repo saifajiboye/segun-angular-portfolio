@@ -1,10 +1,12 @@
 <div class="hero">
     <div class="hero-container">
     <h1>I'm Segun Ajiboye</h1>
-    <p>A full-stack developer based in Salt lake City, United State of America. I specialize in building web applications using modern technologies like Angular, React, Node.js, Java springboot, sql db, AWS. 
+    <p>A full-stack developer based in Salt lake City, United State of America. I specialize in building web applications using modern technologies like Angular, React, Node.js, Java springboot, SQL, AWS. 
         I'm passionate about creating or debugging software that solves real-world problems and improves the lives of those around me. When I am not Building applications you would find me hanging out with friends, playing soccer, video games or watching movie. I am also a passionate Arsenal supporter(this is our Season).</p>
-    <button class="cta">View my Resume</button>
-    <button class="cta-secondary">Contact Me</button>
+    <button (click)="openResume()" class="cta">View my Resume</button>
+    <button (click)="sendEmail()" class="cta-secondary">
+        
+        Contact Me</button>
 </div>
 <div class="hero-image">
     <img src="assets/segcey.jpg" alt="Segun">

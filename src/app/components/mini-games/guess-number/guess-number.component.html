@@ -3,7 +3,7 @@
     <p>Guess the number between 1 and 100</p>
     <input type="number" [(ngModel)]="guess" (keyup.enter)="checkNumber()" placeholder="Enter your guess" class="guess-input">
     <div class="button-group">
-        <button (click)="checkNumber()">Submit</button>
+        <button (click)="checkNumber()">Check Number!</button>
         <button class="reset-button" (click)="restart()">Restart</button>
     </div>
     

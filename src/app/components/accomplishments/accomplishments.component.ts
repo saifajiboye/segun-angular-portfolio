@@ -70,7 +70,7 @@ export class AccomplishmentsComponent {
   },
   {
     title: 'B.sc Degree',
-    description: 'I completed my B.sc(ed) degree from University of Ilorin in Economics',
+    description: 'I completed my B.sc degree from University of Ilorin in Economics',
     imageUrl: 'assets/uni_logo.jpg',
     type: 'Education'
   }

@@ -6,7 +6,6 @@
     <ul class="nav-links" [class.open]="menuOpen || !isMobile">
       <li><a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact:true}">Home</a></li>
       <li><a routerLink="/about-me" routerLinkActive="active-link">About Me</a></li>
-      <li><a routerLink="/Contact" routerLinkActive="active-link">Contact</a></li>
       <li><a routerLink="/mini-games" routerLinkActive="active-link">Mini Games</a></li>
     </ul>
     <button class="theme-toggle" (click)="toggleTheme()">
@@ -14,6 +13,5 @@
       <ng-template #lightMode>
         <i class="fa-sharp fa-solid fa-moon"></i>
       </ng-template>
-      
     </button>
   </nav>

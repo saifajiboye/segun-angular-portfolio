@@ -1,0 +1,12 @@
+<div class="game-container">
+    <h2>Unscramble the words</h2>
+    <p>Unscramble the word below to form a correct word</p>
+    <p class="word">{{scrambledWord}}</p>
+    <p>Hint: Either a fruit, taste, sport or a thing</p>
+    <input type="text" [(ngModel)]="userGuess" (keyup.enter)="checkWord()" placeholder="Enter your guess" class="guess-input">
+    <div class="button-group">
+        <button (click)="checkWord()">Check Word!</button>
+        <button class="reset-button" (click)="restart()">Restart</button>
+    </div>
+    <p class="message">{{message}}</p>
+</div>
