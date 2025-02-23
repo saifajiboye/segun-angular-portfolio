@@ -88,7 +88,9 @@ export class GuessCharacterComponent implements OnInit {
     this.attempts++;
     if (this.userGuess.toLowerCase() === this.word) {
       this.message = `Congratulations! You guessed the word in ${this.attempts} attempts`;
-      this.restart();
+
+      setTimeout(() => this.restart(), 5000);
+    
     } else {
       this.message = 'Try again';
     }
