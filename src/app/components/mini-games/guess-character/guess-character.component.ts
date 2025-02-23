@@ -93,6 +93,7 @@ export class GuessCharacterComponent implements OnInit {
     
     } else {
       this.message = 'Try again';
+      setTimeout(() => this.message = '', 2000);
     }
   }
 

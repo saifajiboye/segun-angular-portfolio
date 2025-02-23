@@ -22,9 +22,11 @@ export class GuessNumberComponent {
       this.message = `Congratulations! You guessed the number in ${this.attempts} attempts`;
       setTimeout(() => this.restart(), 5000);
     } else if (this.guess > this.number) {
-      this.message = 'Try a lower number';
+      this.message = 'Incorect! Enter another guess.<br>Hint: The Number is lower than your input';
+      setTimeout(() => this.message = '', 2000);
     } else {
-      this.message = 'Try a higher number';
+      this.message = 'Incorect! Enter another guess.<br> Hint: The Number is higher than your input';
+      setTimeout(() => this.message = '', 2000);
     }
   }
 
