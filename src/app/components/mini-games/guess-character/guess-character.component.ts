@@ -67,7 +67,7 @@ export class GuessCharacterComponent implements OnInit {
   }
 
   scrambleWord(word: string) {
-    let arr = word.split('');
+    let arr = word.replace(/\s+/g, '').split('');
     for (let i = arr.length - 1; i > 0; i--) {
       let j = Math.floor(Math.random() * (i + 1));
       [arr[i], arr[j]] = [arr[j], arr[i]];
@@ -77,16 +77,16 @@ export class GuessCharacterComponent implements OnInit {
 
   generateWord() {
     this.word = this.words[Math.floor(Math.random() * this.words.length)];
-    this.scrambledWord = this.scrambleWord(this.word);
+    this.scrambledWord = this.scrambleWord(this.word).toUpperCase();
 
     while (this.scrambledWord === this.word) {
-      this.scrambledWord = this.scrambleWord(this.word);
+      this.scrambledWord = this.scrambleWord(this.word).toUpperCase();
     }
   }
 
   checkWord() {
     this.attempts++;
-    if (this.userGuess === this.word) {
+    if (this.userGuess.toLowerCase() === this.word) {
       this.message = `Congratulations! You guessed the word in ${this.attempts} attempts`;
     } else {
       this.message = 'Try again';
