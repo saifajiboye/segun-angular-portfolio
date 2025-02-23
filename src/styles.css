@@ -28,6 +28,7 @@ body.dark {
 
 body {
   background: linear-gradient(135deg, #FDFCFB , #E2D1C3);
+  overflow-x: hidden;
 }
 
 .active-link {

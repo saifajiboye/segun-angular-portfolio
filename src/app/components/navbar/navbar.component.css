@@ -7,10 +7,12 @@
     padding: 10px 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: fixed;
-    width: 97%;
+    width: 100%;
     top: 0;
     left: 0;
     z-index: 1000;
+    max-width: 97vw;
+    overflow-x: hidden;
   }
 
   
@@ -57,7 +59,10 @@
       display: block;
     }
 
-    
+    .navbar {
+      max-width: 90vw;
+    overflow-x: hidden;
+    }
   
     .nav-links {
       display: none;
