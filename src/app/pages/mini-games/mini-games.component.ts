@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { GuessNumberComponent } from '../../components/mini-games/guess-number/guess-number.component';
 import { GuessCharacterComponent } from '../../components/mini-games/guess-character/guess-character.component';
 
@@ -8,11 +8,16 @@ import { GuessCharacterComponent } from '../../components/mini-games/guess-chara
   templateUrl: './mini-games.component.html',
   styleUrl: './mini-games.component.css'
 })
-export class MiniGamesComponent implements OnInit{
+export class MiniGamesComponent implements OnInit, OnDestroy{
+   audio = new Audio('assets/game_sound.mp3')
     ngOnInit(): void {
-    const  audio = new Audio('assets/game_sound.mp3')
-        audio.play();
-        audio.loop=true;
+    
+        this.audio.play();
+        this.audio.loop=true;
       
     }
+    ngOnDestroy(): void {
+      this.audio.pause();
+    }
+
 }
