@@ -1,9 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+
 .dark {
     background-color: black;
     color: white;
 
     h1 {
+        color: orange;
+    }
+
+    h2 {
         color: orange;
     }
 
@@ -16,5 +21,11 @@
         background-color: #444;
         color: gold;
       }
+}
+
+.active-link {
+  background-color: #007bff;
+  border-radius: 5px;
+  padding: 5px 10px;
 }
 

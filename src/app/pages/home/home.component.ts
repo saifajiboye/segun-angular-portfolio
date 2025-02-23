@@ -1,15 +1,14 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   encapsulation: ViewEncapsulation.None
 })
 export class HomeComponent implements OnInit {
-  
   text : string = "'Hi, I'm Segun Ajiboye. Welcome to my Page!'";
   displayedText : string = '';
   index : number = 0;

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MathTimerComponent } from './math-timer.component';
+import { MiniGamesComponent } from './mini-games.component';
 
-describe('MathTimerComponent', () => {
-  let component: MathTimerComponent;
-  let fixture: ComponentFixture<MathTimerComponent>;
+describe('MiniGamesComponent', () => {
+  let component: MiniGamesComponent;
+  let fixture: ComponentFixture<MiniGamesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MathTimerComponent]
+      imports: [MiniGamesComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(MathTimerComponent);
+    fixture = TestBed.createComponent(MiniGamesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

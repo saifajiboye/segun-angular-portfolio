@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--navbar-bg, #ffffff);
+    background: var(--navbar-bg, linear-gradient(to right, #ff7e5f, #feb47b));
     padding: 10px 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: fixed;
@@ -11,6 +11,14 @@
     top: 0;
     left: 0;
     z-index: 1000;
+  }
+
+  body.dark {
+    background: linear-gradient(135deg, #232526, #414345);
+  }
+
+  body {
+    background: linear-gradient(135deg, #FDFCFB , #E2D1C3);
   }
   
   /* Logo */
@@ -38,7 +46,7 @@
   }
   
   .nav-links a:hover {
-    color: var(--accent-color, #007bff);
+    color: var(--accent-color, red);
   }
   
   /* Mobile Menu */
@@ -80,6 +88,7 @@
   }
 
 
+
   
   /* Theme Toggle */
   .theme-toggle {
@@ -102,7 +111,7 @@
   }
   
   .dark .nav-links {
-    background-color: #333;
+    background-color: #222;
   }
   
   .dark .nav-links a:hover {

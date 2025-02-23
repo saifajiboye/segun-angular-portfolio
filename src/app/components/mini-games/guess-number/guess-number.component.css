@@ -1,0 +1,50 @@
+.game-container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    margin: 100px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  
+  
+  .guess-input {
+    width: 80%;
+    padding: 8px;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+  }
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.reset-button {
+  background: #ff4d4d;
+  color: white;
+}
+
+.message {
+  margin-top: 15px;
+  font-weight: bold;
+  color:#444;
+}  
