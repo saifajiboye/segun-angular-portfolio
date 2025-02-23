@@ -19,8 +19,8 @@ export class GuessNumberComponent {
   checkNumber() {
     this.attempts++;
     if (this.guess == this.number) {
-      this.restart();
       this.message = `Congratulations! You guessed the number in ${this.attempts} attempts`;
+      this.restart();
     } else if (this.guess > this.number) {
       this.message = 'Try a lower number';
     } else {
