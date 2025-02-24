@@ -87,7 +87,8 @@ export class GuessCharacterComponent implements OnInit {
   checkWord() {
     
     if (this.userGuess.toLowerCase() === this.word) {
-      this.message = `Congratulations! You guessed the word in ${this.attempts} attempts`;
+      
+      this.message = `Congratulations! You guessed the word in ${this.attempts + 1} attempts`;
 
       return;
     

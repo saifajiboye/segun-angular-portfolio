@@ -19,7 +19,7 @@ export class GuessNumberComponent {
   checkNumber() {
 
     if (this.guess == this.number) {
-      this.message = `Congratulations! You guessed the number in ${this.attempts} attempts`;
+      this.message = `Congratulations! You guessed the number in ${this.attempts + 1} attempts`;
       return;
     } else {
       this.attempts++
