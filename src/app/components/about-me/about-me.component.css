@@ -2,7 +2,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 100vh;
     padding-top: 50px;
     padding-left: 50px;
   
@@ -51,14 +50,17 @@
             font-size: 1rem;
           color: #007bff;
           cursor: pointer;
-          border: 2px;
-          margin-left: 10px;
+          border: none;
         }
         .cta-secondary:hover {
           background-color: #ff7e5f;
           color: white;
         }
       
+    }
+    .button-group {
+      align-items: center;
+      text-align: center;
     }
   
     .hero-image {
@@ -68,9 +70,10 @@
   
       img {
         max-width: 80%;
-        height: 600px;
+        height: 500px;
         border-radius: 30%;
         border: 4px solid white;
+        margin-top: 15px;
       }
     }
   }
@@ -78,25 +81,17 @@
     .hero {
       flex-direction: column;
       text-align: center;
-      margin-bottom: -25px;
       padding-left: 0%;
+
   
-      .hero-content {
-        max-width: 100%;
-       p {
-        width: 100%;
-        max-width: 100%;
-        font-size: small; 
-         
-       }
-       
+      .hero-container {
+        max-width: 80%
       }
-      .hero-image img {
+
+      .hero-image {
         display: none;
 
       }
-    }
-    .hide-on-mobile {
-      display: none;
+      
     }
   }

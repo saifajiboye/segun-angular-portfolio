@@ -39,7 +39,7 @@
   }
   
   .card img {
-    max-width: 100px;
+    width: 100px;
     height: auto;
     margin-bottom: 10px;
     border-radius: 5px;

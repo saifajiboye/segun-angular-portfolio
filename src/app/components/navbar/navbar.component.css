@@ -7,11 +7,10 @@
     padding: 10px 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: fixed;
-    width: 100%;
+    width: 97vw;
     top: 0;
     left: 0;
     z-index: 1000;
-    max-width: 97vw;
     
   }
 
@@ -54,13 +53,13 @@
     cursor: pointer;
   }
   
-  @media (max-width: 768px) {
+  @media (max-width: 600px) {
     .menu-btn {
       display: block;
     }
 
     .navbar {
-      max-width: 90vw;
+      width: 93vw;
     }
   
     .nav-links {
