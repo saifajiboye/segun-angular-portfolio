@@ -47,20 +47,6 @@ export class AccomplishmentsComponent {
   type: 'certification'
 },
 
-{
-  title: 'Fidelity Investments Rewards+ Program',
-  description: 'Developed and maintained a rewards+ application for Fidelity Investments, enhancing customer engagement and satisfaction.',
-  imageUrl: 'assets/fidelity-logo.png',
-  type: 'Work Experience'
-},
-
-{
-  title: 'Trainee/Internship at Revature',
-  description: 'Completed various projects (Using Angular and Java SpringBoot) and training sessions at Revature, gaining valuable skills in software development.',
-  imageUrl: 'assets/revature_logo.png',
-  type: 'Work Experience'
-},
-
 
   {
     title: 'MSIT Degree',
