@@ -8,14 +8,9 @@ import { Component, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class AboutMeComponent {
-  private correctCode = '2525'
   openResume() {
-    const userCode = prompt('Enter access code: ')
-    if (userCode === this.correctCode) {
+    
       window.open('assets/Segun_Ajiboye_Resume.pdf', '_blank');
-    } else {
-      alert ('Incorrect code. Access denied')
-    }
     
   }
 
