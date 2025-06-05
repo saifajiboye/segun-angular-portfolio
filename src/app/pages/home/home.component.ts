@@ -18,6 +18,12 @@ export class HomeComponent implements OnInit {
     this.typeText();
   }
 
+  openResume() {
+    
+    window.open('assets/Segun_Ajiboye_Resume.pdf', '_blank');
+  
+}
+
   typeText() {
     if (this.index < this.text.length) {
       this.displayedText += this.text.charAt(this.index);
