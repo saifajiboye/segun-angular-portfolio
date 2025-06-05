@@ -47,6 +47,12 @@ export class AccomplishmentsComponent {
   type: 'certification'
 },
 
+{
+  title: 'Fidelity Investments Rewards+ Program',
+  description: 'Developed and maintained a rewards+ application for Fidelity Investments, enhancing customer engagement and satisfaction.',
+  imageUrl: 'assets/fidelity-logo.png',
+  type: 'Work Experience'
+},
 
   {
     title: 'MSIT Degree',
@@ -54,6 +60,8 @@ export class AccomplishmentsComponent {
     imageUrl: 'assets/wust_logo.jpg',
     type: 'Education'
   },
+
+
   {
     title: 'B.sc Degree',
     description: 'I completed my B.sc degree from University of Ilorin in Economics',
