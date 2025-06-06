@@ -9,7 +9,7 @@ import { RouterModule } from '@angular/router';
   encapsulation: ViewEncapsulation.None
 })
 export class HomeComponent implements OnInit {
-  text : string = "'Hi, I'm Segun Ajiboye. Welcome to my Page!'";
+  text : string = "Hi, I'm Segun Ajiboye. Welcome to my Page!";
   displayedText : string = '';
   index : number = 0;
 
