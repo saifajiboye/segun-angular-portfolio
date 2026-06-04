@@ -43,9 +43,19 @@ button:hover {
   opacity: 0.8;
 }
 
+.hint-button {
+  background: #f0a500;
+  color: white;
+}
+
 .reset-button {
   background: #ff4d4d;
   color: white;
+}
+
+.hint {
+  font-weight: bold;
+  color: green;
 }
 
 .message {
