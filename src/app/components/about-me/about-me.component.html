@@ -28,7 +28,11 @@
   <div class="chat-body" #chatBody>
     @for (msg of messages; track $index) {
       <div class="message" [class.user]="msg.role === 'user'" [class.bot]="msg.role === 'bot'">
-        <span>{{msg.text}}</span>
+        @if (msg.role === 'bot') {
+          <span [innerHTML]="msg.text"></span>
+        } @else {
+          <span>{{msg.text}}</span>
+        }
       </div>
     }
     @if (isLoading) {

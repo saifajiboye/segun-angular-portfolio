@@ -37,7 +37,7 @@ export class AboutMeComponent {
 
     this.chatService.ask(question).subscribe({
       next: (answer) => {
-        this.messages.push({ role: 'bot', text: answer });
+        this.messages.push({ role: 'bot', text: this.formatMarkdown(answer) });
         this.isLoading = false;
         this.scrollToBottom();
       },
@@ -47,6 +47,13 @@ export class AboutMeComponent {
         this.scrollToBottom();
       }
     });
+  }
+
+  private formatMarkdown(text: string): string {
+    return text
+      .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*(.+?)\*/g, '<em>$1</em>')
+      .replace(/\n/g, '<br>');
   }
 
   private scrollToBottom() {
