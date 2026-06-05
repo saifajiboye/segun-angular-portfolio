@@ -1,51 +1,189 @@
 .game-container {
-    text-align: center;
-    padding: 20px;
-    border-radius: 10px;
-    width: 300px;
-    margin: 100px auto;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  
-  
-  .guess-input {
-    width: 80%;
-    padding: 8px;
-    font-size: 16px;
-    text-align: center;
-    margin-bottom: 10px;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-  }
+  text-align: center;
+  padding: 24px 20px;
+  border-radius: 16px;
+  width: 340px;
+  margin: 60px auto;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
 
+.game-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+
+  h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0;
+  }
+}
+
+.instructions-btn {
+  background: none;
+  border: 1.5px solid #ccc;
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: inherit;
+  transition: 0.2s;
+
+  &:hover {
+    border-color: blueviolet;
+    color: blueviolet;
+  }
+}
+
+/* Start & Game Over screens */
+.start-screen, .game-over {
+  padding: 20px 0;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: gray;
+  margin-bottom: 20px;
+}
+
+.start-btn {
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, blueviolet, #9b59b6);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(138, 43, 226, 0.35);
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(138, 43, 226, 0.5);
+  }
+}
+
+.game-over-emoji {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.game-over h3 {
+  font-size: 1.5rem;
+  margin: 8px 0;
+}
+
+.final-score {
+  font-size: 2rem;
+  font-weight: 800;
+  color: blueviolet;
+}
+
+.rating {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+/* HUD */
+.hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 8px 12px;
+  background: #f7f7fb;
+  border-radius: 12px;
+}
+
+.timer {
+  font-size: 1.4rem;
+  font-weight: 700;
+  transition: color 0.5s;
+}
+
+.score {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: blueviolet;
+}
+
+/* Word */
+.word {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 6px;
+  color: #e74c3c;
+  margin: 12px 0;
+}
+
+.loading {
+  color: gray;
+  font-style: italic;
+  margin: 20px 0;
+}
+
+/* Input */
+.guess-input {
+  width: 80%;
+  padding: 10px;
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 12px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.2s;
+
+  &:focus {
+    border-color: blueviolet;
+  }
+}
+
+/* Buttons */
 .button-group {
   display: flex;
   justify-content: center;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 button {
-  padding: 10px 15px;
-  font-size: 16px;
+  padding: 9px 18px;
+  font-size: 0.95rem;
   border: none;
   border-radius: 15px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.2s;
   background-color: blueviolet;
-}
+  color: white;
 
-.word {
-    color :red
-}
-
-button:hover {
-  opacity: 0.8;
+  &:hover {
+    opacity: 0.85;
+  }
 }
 
 .hint-button {
   background: #f0a500;
   color: white;
+
+  .penalty {
+    font-size: 0.75rem;
+    opacity: 0.85;
+    margin-left: 4px;
+  }
+}
+
+.skip-button {
+  background: #64748b;
+  color: white;
+
+  .penalty {
+    font-size: 0.75rem;
+    opacity: 0.85;
+    margin-left: 4px;
+  }
 }
 
 .reset-button {
@@ -54,12 +192,69 @@ button:hover {
 }
 
 .hint {
-  font-weight: bold;
-  color: green;
+  font-weight: 600;
+  color: #16a34a;
+  margin-bottom: 8px;
 }
 
 .message {
-  margin-top: 15px;
+  margin-top: 12px;
   font-weight: bold;
-  color: blue;
-}  
+  font-size: 1rem;
+  min-height: 24px;
+}
+
+/* Instructions modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(3px);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background: white;
+  border-radius: 16px;
+  padding: 28px 24px;
+  width: 300px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+  animation: popIn 0.25s ease;
+
+  h3 {
+    margin: 0 0 16px;
+    font-size: 1.2rem;
+  }
+
+  ul {
+    text-align: left;
+    padding-left: 18px;
+    line-height: 2;
+    font-size: 0.9rem;
+    color: #444;
+    margin-bottom: 20px;
+  }
+}
+
+.close-btn {
+  background: linear-gradient(135deg, blueviolet, #9b59b6);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 24px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  width: 100%;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}

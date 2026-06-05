@@ -1,23 +1,77 @@
 <div class="game-container">
-    <h2>Unscramble the words</h2>
-    <p>Unscramble the word below to form a correct word</p>
+  <div class="game-header">
+    <h2>Unscramble Challenge</h2>
+    <button class="instructions-btn" (click)="showInstructions = true">❓ How to Play</button>
+  </div>
+
+  @if (showInstructions) {
+    <div class="modal-overlay" (click)="showInstructions = false">
+      <div class="modal" (click)="$event.stopPropagation()">
+        <h3>How to Play</h3>
+        <ul>
+          <li>You have <strong>90 seconds</strong> to unscramble as many words as possible</li>
+          <li>Type your answer and press <strong>Enter</strong> or click <strong>Submit</strong></li>
+          <li>Click <strong>Reveal Hint</strong> to see the word category — costs <strong>8 seconds</strong></li>
+          <li>Click <strong>Skip</strong> to get a new word — costs <strong>15 seconds</strong></li>
+          <li>Each correct word earns <strong>1 point</strong></li>
+          <li>Game ends when time runs out</li>
+        </ul>
+        <button class="close-btn" (click)="showInstructions = false">Got it!</button>
+      </div>
+    </div>
+  }
+
+  @if (!gameActive && !gameOver) {
+    <div class="start-screen">
+      <p class="subtitle">How many words can you unscramble in 90 seconds?</p>
+      <button class="start-btn" (click)="startGame()">🚀 Start Game</button>
+    </div>
+  }
+
+  @if (gameOver) {
+    <div class="game-over">
+      <p class="game-over-emoji">🎉</p>
+      <h3>Time's Up!</h3>
+      <p>You unscrambled <span class="final-score">{{score}}</span> word{{score !== 1 ? 's' : ''}}</p>
+      <p class="rating">
+        @if (score >= 10) { 🔥 Outstanding! }
+        @else if (score >= 6) { 👏 Great job! }
+        @else if (score >= 3) { 👍 Good effort! }
+        @else { 💪 Keep practicing! }
+      </p>
+      <button class="start-btn" (click)="startGame()">🔄 Play Again</button>
+    </div>
+  }
+
+  @if (gameActive) {
+    <div class="hud">
+      <div class="timer" [style.color]="timerColor">
+        ⏱ {{timeLeft}}s
+      </div>
+      <div class="score">⭐ {{score}}</div>
+    </div>
 
     @if (isLoading) {
-      <p>Loading word...</p>
+      <p class="loading">Loading word...</p>
     } @else {
       <p class="word">{{scrambledWord}}</p>
+
       @if (showHint) {
-        <p class="hint">Hint: {{category | titlecase}}</p>
+        <p class="hint">💡 {{category | titlecase}}</p>
       }
-      <input type="text" [(ngModel)]="userGuess" (keyup.enter)="checkWord()" placeholder="Enter your guess" class="guess-input">
+
+      <input type="text" [(ngModel)]="userGuess" (keyup.enter)="checkWord()"
+        placeholder="Type your answer..." class="guess-input" autofocus>
+
       <div class="button-group">
-          <button (click)="checkWord()">Check Word!</button>
-          @if (!showHint) {
-            <button class="hint-button" (click)="showHint = true">Reveal Hint</button>
-          }
-          <button class="reset-button" (click)="restart()">Restart</button>
+        <button (click)="checkWord()">Submit</button>
+        @if (!showHint) {
+          <button class="hint-button" (click)="revealHint()">💡 Hint <span class="penalty">-8s</span></button>
+        }
+        <button class="skip-button" (click)="skipWord()">⏭ Skip <span class="penalty">-15s</span></button>
       </div>
     }
 
     <p class="message">{{message}}</p>
+  }
 </div>
