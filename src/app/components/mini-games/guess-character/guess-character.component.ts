@@ -47,15 +47,8 @@ export class GuessCharacterComponent implements OnInit, OnDestroy {
     this.message = '';
     this.showHint = false;
     this.userGuess = '';
-    this.generateWord();
     this.clearTimer();
-    this.timer = setInterval(() => {
-      this.timeLeft--;
-      if (this.timeLeft <= 0) {
-        this.timeLeft = 0;
-        this.endGame();
-      }
-    }, 1000);
+    this.generateWord(true);
   }
 
   endGame() {
@@ -73,7 +66,18 @@ export class GuessCharacterComponent implements OnInit, OnDestroy {
     return arr.join('');
   }
 
-  generateWord() {
+  private startTimer() {
+    this.clearTimer();
+    this.timer = setInterval(() => {
+      this.timeLeft--;
+      if (this.timeLeft <= 0) {
+        this.timeLeft = 0;
+        this.endGame();
+      }
+    }, 1000);
+  }
+
+  generateWord(startTimerAfter = false) {
     this.isLoading = true;
     this.bedrockService.getWord().subscribe({
       next: ({ word, category }) => {
@@ -84,6 +88,7 @@ export class GuessCharacterComponent implements OnInit, OnDestroy {
           this.scrambledWord = this.scrambleWord(this.word).toUpperCase();
         }
         this.isLoading = false;
+        if (startTimerAfter) this.startTimer();
       },
       error: (err) => {
         console.error('API error:', err);
