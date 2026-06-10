@@ -37,9 +37,8 @@ export class AboutMeComponent {
 
     this.chatService.ask(question).subscribe({
       next: (answer) => {
-        this.messages.push({ role: 'bot', text: this.formatMarkdown(answer) });
         this.isLoading = false;
-        this.scrollToBottom();
+        this.typeMessage(this.formatMarkdown(answer));
       },
       error: () => {
         this.messages.push({ role: 'bot', text: 'Something went wrong. Please try again.' });
@@ -47,6 +46,18 @@ export class AboutMeComponent {
         this.scrollToBottom();
       }
     });
+  }
+
+  private typeMessage(html: string) {
+    const msg: ChatMessage = { role: 'bot', text: '' };
+    this.messages.push(msg);
+    const chars = html.split('');
+    let i = 0;
+    const interval = setInterval(() => {
+      msg.text += chars[i++];
+      this.scrollToBottom();
+      if (i >= chars.length) clearInterval(interval);
+    }, 15);
   }
 
   private formatMarkdown(text: string): string {
